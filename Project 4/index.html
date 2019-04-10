@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Project 4</title>
+    </head>
+    
+    <body>
+        <h1>This program will convert decimal to binary, hexadecimal and octal.</h1>
+        <b>Insert a whole number: </b><input type = "text" name = "deci" id = "deci" size = "15" maxlength = "15" />
+        <input type="button" value="Convert!" onclick="dec2bin(), dec2hex(), dec2oct()" />
+        <br><br>
+        <div id = "result1"></div>
+        <div id = "result2"></div>
+        <div id = "result3"></div>
+        
+        <script type = "text/javascript"> 
+            
+            function dec2bin() {
+                var x = document.getElementById("deci").value;
+                if ((/[^0-9]/g.test(x)) || x == "") {
+                    alert ("You must enter an integer decimal number!");
+                    document.getElementById("deci").value = "";
+                    document.getElementById("deci").focus();
+                    return false;
+                }
+                x = parseInt(x);
+                var bin = x.toString(2);
+                var figs = "The binary representation of " + x + " is " + bin + "<br>";
+                document.getElementById("result1").innerHTML = figs;
+            }
+
+            function dec2hex() {
+                var x = document.getElementById("deci").value;
+                if ((/[^0-9]/g.test(x)) || x == "") {
+                    alert ("You must enter an integer decimal number!");
+                    document.getElementById("deci").value = "";
+                    document.getElementById("deci").focus();
+                    return false;
+                }
+                x = parseInt(x);
+                var hex = x.toString(16).toUpperCase();
+                var figs = "The hexadecimal representation of " + x + " is " + hex + "<br>";
+                document.getElementById("result2").innerHTML = figs;
+            }
+
+            function dec2oct() {
+                var x = document.getElementById("deci").value;
+                if ((/[^0-9]/g.test(x)) || x == "") {
+                    alert ("You must enter an integer decimal number!");
+                    document.getElementById("deci").value = "";
+                    document.getElementById("deci").focus();
+                    return false;
+                }
+                x = parseInt(x);
+                var oct = x.toString(8);
+                var figs = "The octal representation of " + x + " is " + oct + "<br>";
+                document.getElementById("result3").innerHTML = figs;
+            }
+        </script>
+        
+    </body>
+    
+</html>

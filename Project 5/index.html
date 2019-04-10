@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Project 5 Sample</title>
+		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		<script type="text/javascript">
+			function calcFeetandIn() {
+				var centimetersinput = parseInt(document.centToFeetandInches.centimeters.value);
+				if (isNaN(centimetersinput)) {
+					alert("You must enter numeric values!");
+				}
+				else {
+					var feet = centimetersinput / 30.48;
+					var inches = centimetersinput / 2.54;
+					
+					document.centToFeetandInches.feet.value = feet.toFixed(2);
+					document.centToFeetandInches.inches.value = inches.toFixed(2);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Convert Centimeters to Feet and Inches</h1>
+		<form name="centToFeetandInches">
+			<h5>Input</h5>
+			<p><input type="text" name="centimeters" value="" />cm<br />
+			<input type="button" value="Calculate" onclick="calcFeetandIn()"/></p>
+			<h5>Output</h5>
+			<input type="text" name="feet" />ft<br />
+			<input type="text" name="inches" />in<br />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Project 7</title>
+        <style>
+            #result.green {
+                color: rgb(30, 255, 0);
+            }
+            #result.red {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>This program will check to see if the email is valid.</h1>
+        <form name="checkemail">
+            Please enter your email:<br>
+            <input type="text" name="email">
+            <input type="button" value="Submit" onclick="validate()">
+            <p id="result"></p>
+        </form>
+
+        <script>
+            var validility;
+            function validate() {
+                validility = false;
+                var result = document.getElementById("result");
+                var email = document.checkemail.email.value;
+
+                if(email.indexOf("@") != -1 && email.indexOf(".com") != -1 || email.indexOf(".net") != -1 || email.indexOf(".org") != -1 || email.indexOf(".gg") != -1 && email.indexOf("") != -1) {
+                    validility = true;
+                    result.innerHTML = "This email is valid!";
+                    result.className = "green";
+                }else{
+                    validility = false;
+                    result.innerHTML = "This email is invalid! Please try again.";
+                    result.className = "red";
+                }
+                console.log("Validility is equal to " + validility);
+            }
+        </script>
+
+    </body>
+
+</html>

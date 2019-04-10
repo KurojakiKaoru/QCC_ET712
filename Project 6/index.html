@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Project #6</title>
+        <style>
+            body {
+                background-color: #2e2e2e;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body onload="run=setInterval('changeImg()', 3000);">
+        <script type="text/javascript">
+            var run;
+            var curImage = 1;
+            function changeImg() {
+                switch (curImage) {
+                case 1:
+                    document.images[0].src = "img/img2.jpg";
+                    curImage = 2;
+                    break;
+                case 2:
+                    document.images[0].src = "img/img3.jpg";
+                    curImage = 3;
+                    break;
+                case 3:
+                    document.images[0].src = "img/img4.jpg";
+                    curImage = 4;
+                    break;
+                case 4:
+                    document.images[0].src = "img/img5.jpg";
+                    curImage = 5;
+                    break;
+                case 5:
+                    document.images[0].src = "img/img1.jpg";
+                    curImage = 1;
+                    break;
+                }
+        }
+    </script>
+        <h1>This will display a picture slide show</h1>
+        <p><img src="img/img1.jpg" height="180" width="320" alt="Changing image" /></p>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <title>Project 8</title>
+    </head>
+
+    <body>
+        <h2 class="title">Current Time:</h2>
+        <h4 id="time"></h4>
+        <script>
+            function getTimeofDay() {
+                var time_id = document.getElementById("time");
+                var d = new Date();
+                var hours = d.getHours();
+                var mins = d.getMinutes();
+                var secs = d.getSeconds();
+                var am_pm = "";
+                if(hours >= 12) {
+                    am_pm = "PM";
+                }
+                else {
+                    am_pm = "AM";
+                }
+                if(hours > 13) {
+                    hours = hours - 12;
+                }
+                if(secs < 10) {
+                    secs = "0" + secs;
+                }
+                if(mins < 10) {
+                    mins = "0" + mins;
+                }
+                time_id.innerHTML = hours + ":" + mins + ":" + secs + " " + am_pm;
+            }
+            setInterval(getTimeofDay, 100);
+        </script>
+    </body>
+</html>
