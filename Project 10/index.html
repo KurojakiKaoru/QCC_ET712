@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Project 10</title>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+        <script type="text/javascript">
+            var loading_img = new Array(95);
+            var curLoading = 0;
+            var direction;
+            var begin;
+            for(i = 0; i < 95; i++) {
+                loading_img[i] = "img/tmp-" + i + ".gif";
+            }
+            function animate() {
+                if (curLoading == 94) {
+                    curLoading = 0;
+                }
+                else {
+                    ++curLoading;
+                }
+                document.getElementsByTagName("img")[0].src = loading_img[curLoading].src;
+                if (curLoading == 0) {
+                    direction = "up";
+                }
+                else if (curLoading == 94) {
+                    direction = "down";
+                }
+                document.getElementsByTagName("img")[0].src = loading_img[curLoading];
+            }
+
+            function startAnimating() {
+                if (begin) {
+                    clearInterval(begin);
+                }
+                begin = setInterval(animate, 30);
+            }
+        </script>
+    </head>
+    <body onload="startAnimating()">
+        <h1>Loading</h1>
+        <p><img src="img/tmp-0.gif" height="113" width="100" alt="Image of a loading animation." /></p>
+        <form action="" enctype="text/plain">
+            <p>
+                <input type="button" value="Start Loading" onclick="startAnimating();"/> 
+                <input type="button" value="Stop Loading" onclick="clearInterval(begin);"/>
+            </p>
+        </form>
+    </body>
+</html>
